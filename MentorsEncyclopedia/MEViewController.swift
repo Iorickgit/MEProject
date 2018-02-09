@@ -21,9 +21,9 @@ class MEViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        initialImageArray.append(UIImage(named: "Tom.jpg")!)
+        initialImageArray.append(UIImage(named: "John.jpg")!)
         initialImageArray.append(UIImage(named: "Noel.jpg")!)
-        mentorArray.append(mentorList(name: "Tom", image: initialImageArray[0], course: "R.A.T.M"))
+        mentorArray.append(mentorList(name: "John", image: initialImageArray[0], course: "RHCP"))
         mentorArray.append(mentorList(name: "Noel", image: initialImageArray[1], course: "Oasis"))
         // Do any additional setup after loading the view.
         setUI()
@@ -32,7 +32,7 @@ class MEViewController: UIViewController {
     @IBAction func next(){
         index = index + 1
         setUI()
-    }
+    
 
     @IBAction func back(){
         index = index - 1
