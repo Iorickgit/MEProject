@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MEViewController: UIViewController {
+class MEViewController: UIViewController{
     
     var mentorArray: [mentorList] = []
     var initialImageArray: [UIImage] = []
@@ -25,14 +25,18 @@ class MEViewController: UIViewController {
         initialImageArray.append(UIImage(named: "Noel.jpg")!)
         mentorArray.append(mentorList(name: "John", image: initialImageArray[0], course: "RHCP"))
         mentorArray.append(mentorList(name: "Noel", image: initialImageArray[1], course: "Oasis"))
+        let archivedArray = NSKeyedArchiver.archivedData(withRootObject: mentorArray)
+        savedData().userDefaults.register(defaults: ["savedList": archivedArray])
+        print("archived")
         // Do any additional setup after loading the view.
+        mentorArray = archiver().unArchiveData(file: savedData().userDefaults.data(forKey: "savedList")!) as! [mentorList]
         setUI()
     }
     
     @IBAction func next(){
         index = index + 1
         setUI()
-    
+    }
 
     @IBAction func back(){
         index = index - 1
