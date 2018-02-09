@@ -16,6 +16,9 @@
 		8967E560202E190500F4E28C /* MentorsEncyclopediaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8967E55F202E190500F4E28C /* MentorsEncyclopediaUITests.swift */; };
 		8967E56E202E1C6800F4E28C /* MEViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8967E56D202E1C6800F4E28C /* MEViewController.swift */; };
 		8967E570202E263300F4E28C /* MentorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8967E56F202E263300F4E28C /* MentorList.swift */; };
+		8967E574202E299D00F4E28C /* Noel.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8967E573202E299C00F4E28C /* Noel.jpg */; };
+		8967E576202E29D400F4E28C /* John.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8967E575202E29D400F4E28C /* John.jpg */; };
+		8967E578202E29F100F4E28C /* Tom.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8967E577202E29F000F4E28C /* Tom.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,9 @@
 		8967E561202E190500F4E28C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8967E56D202E1C6800F4E28C /* MEViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MEViewController.swift; sourceTree = "<group>"; };
 		8967E56F202E263300F4E28C /* MentorList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorList.swift; sourceTree = "<group>"; };
+		8967E573202E299C00F4E28C /* Noel.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Noel.jpg; sourceTree = "<group>"; };
+		8967E575202E29D400F4E28C /* John.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = John.jpg; sourceTree = "<group>"; };
+		8967E577202E29F000F4E28C /* Tom.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Tom.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +115,9 @@
 				8967E56F202E263300F4E28C /* MentorList.swift */,
 				8967E548202E190400F4E28C /* LaunchScreen.storyboard */,
 				8967E54B202E190400F4E28C /* Info.plist */,
+				8967E573202E299C00F4E28C /* Noel.jpg */,
+				8967E575202E29D400F4E28C /* John.jpg */,
+				8967E577202E29F000F4E28C /* Tom.jpg */,
 			);
 			path = MentorsEncyclopedia;
 			sourceTree = "<group>";
@@ -238,7 +247,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8967E578202E29F100F4E28C /* Tom.jpg in Resources */,
 				8967E54A202E190400F4E28C /* LaunchScreen.storyboard in Resources */,
+				8967E574202E299D00F4E28C /* Noel.jpg in Resources */,
+				8967E576202E29D400F4E28C /* John.jpg in Resources */,
 				8967E547202E190400F4E28C /* Assets.xcassets in Resources */,
 				8967E545202E190400F4E28C /* Main.storyboard in Resources */,
 			);

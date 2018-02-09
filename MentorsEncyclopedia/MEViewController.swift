@@ -11,6 +11,7 @@ import UIKit
 class MEViewController: UIViewController {
     
     var mentorArray: [mentorList] = []
+    var initialImageArray: [UIImage] = []
     
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var nameLabel: UILabel!
@@ -20,7 +21,10 @@ class MEViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        mentorArray.append(mentorList(name: "", imageName: "", course: ""))
+        initialImageArray.append(UIImage(named: "Tom.jpg")!)
+        initialImageArray.append(UIImage(named: "Noel.jpg")!)
+        mentorArray.append(mentorList(name: "Tom", image: initialImageArray[0], course: "R.A.T.M"))
+        mentorArray.append(mentorList(name: "Noel", image: initialImageArray[1], course: "Oasis"))
         // Do any additional setup after loading the view.
         setUI()
     }
@@ -36,7 +40,7 @@ class MEViewController: UIViewController {
     }
     
     func setUI(){
-        imageView.image = mentorArray[index].getImage()
+        imageView.image = mentorArray[index].image
         nameLabel.text = mentorArray[index].name
         courseLabel.text = mentorArray[index].course
     }

@@ -11,15 +11,11 @@ import UIKit
 class mentorList{
     var name: String!
     var course: String!
-    var imageName: String!
+    var image: UIImage!
     
-    init(name: String, imageName: String, course: String){
+    init(name: String, image: UIImage, course: String){
         self.name = name
-        self.imageName = imageName
+        self.image = image
         self.course = course
-    }
-    
-    func getImage() -> UIImage{
-        return UIImage(named: imageName)!
     }
 }
