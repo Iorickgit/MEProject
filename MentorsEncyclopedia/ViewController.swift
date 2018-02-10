@@ -37,7 +37,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     @IBAction func addNewMentor(){
-        mentorArray.append(mentorList(name: mentorNameText.text!, image: pickedPhoto.image!, course: courseNameText.text!))
+        mentorArray.append(mentorList(name: mentorNameText.text!/*, image: pickedPhoto.image!*/, course: courseNameText.text!))
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {

@@ -11,12 +11,12 @@ import UIKit
 class mentorList: NSObject, NSCoding{
     var name: String!
     var course: String!
-    var image: UIImage!
+    //var image: UIImage!
     
     //initialize class
-    init(name: String, image: UIImage, course: String){
+    init(name: String, /*image: UIImage,*/ course: String){
         self.name = name
-        self.image = image
+        //self.image = image
         self.course = course
     }
     
@@ -24,14 +24,15 @@ class mentorList: NSObject, NSCoding{
     required init(coder decoder: NSCoder) {
         self.name = decoder.decodeObject(forKey: "name") as? String ?? ""
         self.course = decoder.decodeObject(forKey: "course") as? String ?? ""
-        self.image = decoder.decodeObject(forKey: "image") as! UIImage
+        //self.image = decoder.decodeObject(forKey: "image") as? UIImage
     }
     
     //coder initializing
     func encode(with coder: NSCoder) {
         coder.encode(name, forKey: "name")
         coder.encode(course, forKey: "course")
-        coder.encode(image, forKey: "image")
+        //coder.encode(image, forKey: "image")
+        //print(image)
     }
 }
 
@@ -39,7 +40,7 @@ class savedData{
     var userDefaults: UserDefaults = UserDefaults.standard
 }
 
-class archiver{
+class dataArchiver{
     func archiveData(file: Any) -> Any{
         let archivedArray = NSKeyedArchiver.archivedData(withRootObject: file)
         return archivedArray

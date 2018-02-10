@@ -12,6 +12,10 @@ class MEViewController: UIViewController{
     
     var mentorArray: [mentorList] = []
     var initialImageArray: [UIImage] = []
+    var addImageArray: [UIImage] = []
+    var finalImageArray: [UIImage] = []
+    var archiver = dataArchiver()
+    var saveData = savedData()
     
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var nameLabel: UILabel!
@@ -23,13 +27,19 @@ class MEViewController: UIViewController{
         super.viewDidLoad()
         initialImageArray.append(UIImage(named: "John.jpg")!)
         initialImageArray.append(UIImage(named: "Noel.jpg")!)
-        mentorArray.append(mentorList(name: "John", image: initialImageArray[0], course: "RHCP"))
-        mentorArray.append(mentorList(name: "Noel", image: initialImageArray[1], course: "Oasis"))
-        let archivedArray = NSKeyedArchiver.archivedData(withRootObject: mentorArray)
-        savedData().userDefaults.register(defaults: ["savedList": archivedArray])
+        mentorArray.append(mentorList(name: "John", /*image: initialImageArray[0],*/ course: "RHCP"))
+        mentorArray.append(mentorList(name: "Noel", /*image: initialImageArray[1],*/ course: "Oasis"))
+        print(initialImageArray)
+        saveData.userDefaults.set(archiver.archiveData(file: initialImageArray), forKey: "savedImage")
+        print((archiver.unArchiveData(file: saveData.userDefaults.data(forKey: "savedImage")!)))
+        //saveData.userDefaults.register(defaults: ["savedImage": archiver.archiveData(file: initialImageArray)])
+        saveData.userDefaults.register(defaults: ["savedList": archiver.archiveData(file: mentorArray)])
         print("archived")
         // Do any additional setup after loading the view.
-        mentorArray = archiver().unArchiveData(file: savedData().userDefaults.data(forKey: "savedList")!) as! [mentorList]
+        mentorArray = archiver.unArchiveData(file: saveData.userDefaults.data(forKey: "savedList")!) as! [mentorList]
+        finalImageArray = (archiver.unArchiveData(file: saveData.userDefaults.data(forKey: "savedImage")!) as! [UIImage])
+        print(finalImageArray)
+        print(mentorArray)
         setUI()
     }
     
@@ -44,7 +54,7 @@ class MEViewController: UIViewController{
     }
     
     func setUI(){
-        imageView.image = mentorArray[index].image
+        imageView.image = finalImageArray[index]
         nameLabel.text = mentorArray[index].name
         courseLabel.text = mentorArray[index].course
     }
